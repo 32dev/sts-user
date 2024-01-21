@@ -1,7 +1,5 @@
-package com.dev32.board.controller;
+package com.dev32.user.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -12,8 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.dev32.board.dto.UserDTO;
-import com.dev32.board.service.LoremService;
+import com.dev32.user.service.UserService;
 
 /**
  * Handles requests for the application home page.
@@ -24,22 +21,14 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Autowired
-	private LoremService loremService;
-
+	private UserService userService;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		String randomName = loremService.getRandomName();
-		String formattedDate = dateFormat.format(date);
-		model.addAttribute("randomName", randomName);
-		model.addAttribute("serverTime", formattedDate);
-		UserDTO user = new UserDTO();
+		model.addAttribute("list", userService.list());
 		return "home";
 	}
 

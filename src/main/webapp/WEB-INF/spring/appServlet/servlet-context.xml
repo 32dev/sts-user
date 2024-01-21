@@ -26,8 +26,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan
-		base-package="com.dev32.board" />
 
 	<!-- 데이터 베이스 연결을 위한 객체를 사용하기 위해 빈을 만든다. 세터 주입법을 사용한다. -->
 	<beans:bean id="dataSource"
@@ -45,15 +43,13 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="configLocation"
-			value="classpath:com/dev32/board/dao/sql-map-config.xml" />
-
-		<!-- Specify the package where MyBatis mapper interfaces are located -->
-		<beans:property name="mapperLocations"
-			value="classpath*:com/dev32/board/dao/mapper/*Mapper.xml" />
+			value="classpath:com/dev32/user/dao/sql-map-config.xml" />
 	</beans:bean>
 	<beans:bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg index="0" ref="sqlSessionFactory" />
+		<beans:constructor-arg index="0"
+			ref="sqlSessionFactory" />
 	</beans:bean>
-	<context:component-scan base-package="com.dev32.board" />
+	<context:component-scan
+		base-package="com.dev32.user" />
 </beans:beans>
