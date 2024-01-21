@@ -22,4 +22,5 @@ public class UDao implements IDao {
 	public List<UserDTO> list() {
 		return session.selectList(namespace + ".list");
 	}
+	
 }
