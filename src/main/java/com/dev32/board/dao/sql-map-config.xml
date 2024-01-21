@@ -3,6 +3,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<mappers>
-		<mapper resource="com/dev32/board/mapper/IDao.xml" />
+		<mapper resource="com/dev32/board/dao/mapper/IDao.xml" />
 	</mappers>
 </configuration>

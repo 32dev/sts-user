@@ -1,4 +1,4 @@
-package com.dev32.board;
+package com.dev32.board.dto;
 
 import lombok.Getter;
 import lombok.Setter;

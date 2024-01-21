@@ -45,11 +45,11 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="configLocation"
-			value="classpath:com/dev32/board/sql-map-config.xml" />
+			value="classpath:com/dev32/board/dao/sql-map-config.xml" />
 
 		<!-- Specify the package where MyBatis mapper interfaces are located -->
 		<beans:property name="mapperLocations"
-			value="classpath*:com/dev32/board/*Mapper.xml" />
+			value="classpath*:com/dev32/board/dao/mapper/*Mapper.xml" />
 	</beans:bean>
 	<beans:bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">

@@ -1,4 +1,4 @@
-package com.dev32.board;
+package com.dev32.board.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.dev32.board.dto.UserDTO;
+import com.dev32.board.service.LoremService;
 
 /**
  * Handles requests for the application home page.
